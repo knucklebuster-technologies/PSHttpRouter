@@ -1,20 +1,20 @@
-$manifest = "$PSScriptRoot\PSRouter.psd1"
+$manifest = "$PSScriptRoot\PSHttpRouter.psd1"
 $versionJson = "$PSScriptRoot"
 
 # Update FileList in manifest
 $FileList = @(
     'README.md'
-    'PSRouter.psm1'
-    'PSRouter.psd1'
+    'PSHttpRouter.psm1'
+    'PSHttpRouter.psd1'
     'LICENSE'
 )
 $FileList += Get-ChildItem "$PSScriptRoot\objs" | Resolve-Path -Relative
 $FileList += Get-ChildItem "$PSScriptRoot\en-US" | Resolve-Path -Relative
 $FileList += Get-ChildItem "$PSScriptRoot\cmds" | Resolve-Path -Relative
-#Update-ModuleManifest -Path "$PSScriptRoot\PSSemanticVersion.psd1" -FileList $FileList
+Update-ModuleManifest -Path "$manifest" -FileList $FileList
 
 # Import Module for use
-Import-Module $manifest -Force
+Import-Module -Name PSSemanticVersion -Force
 
 # Update Version in Manifest
 $Version = New-SemanticVersion

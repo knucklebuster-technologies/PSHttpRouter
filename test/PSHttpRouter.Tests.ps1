@@ -1,4 +1,4 @@
-$ModuleManifestName = 'PSRouter.psd1'
+$ModuleManifestName = 'PSHttpRouter.psd1'
 $ModuleManifestPath = "$PSScriptRoot\..\$ModuleManifestName"
 
 Describe 'Module Manifest Tests' {
